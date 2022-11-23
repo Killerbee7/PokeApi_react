@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Layout from './pages/Layout';
+import {Routes,Route,BrowserRouter, useParams} from 'react-router-dom';
+import PokeList from './components/PokeList';
+import About from './components/About';
+import Home from './components/Home';
+import PokeSingle from './components/PokeSingle';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+//work around
+
+const RouterWrapper = (props) => {
+  const params = useParams();
+
+  return <PokeSingle params={params}{...props}/>
+
+};
+
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout/>}>
+        <Route index element={<Home/>}/>
+        <Route path="pokelist" element={<PokeList/>}/>
+        <Route path='pokelist/:pokesingle' element={<RouterWrapper/>}/>
+        <Route path="about" element={<About/>}/>
+
+        </Route>
+      </Routes>
+       
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;

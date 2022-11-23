@@ -1,0 +1,32 @@
+
+.card_main{
+    background-color: rgb(197, 151, 151);
+    height: 400px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5%;
+    margin: 1.5rem;
+    
+    
+}
+
+
+.card_main:hover {
+    box-shadow: 5px 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+img{
+    width: 300px;
+
+}
+.card_details{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+
+    
+
+    
+}
