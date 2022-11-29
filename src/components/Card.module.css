@@ -21,13 +21,16 @@ img{
 
 }
 .card_details{
+    height: 80px;
+    font-size: 1.2rem ;
     text-align: center;
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
-    background-color: gray;
-
+    background:linear-gradient(14deg, rgb(213, 213, 213) 0 50%, rgb(137, 191, 152) 50% 100%);
     
+}
 
-    
+.card_details a{
+    margin-top: 8px;
+
 }

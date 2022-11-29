@@ -11,7 +11,7 @@ const Card = (props) => {
                 <div className={classes.card_details}>
                 <h2>{props.name}</h2>
                 <Link to={`${props.name}`}>See more</Link>
-                <p>Types: Land</p>
+                
                 
             </div>
             
