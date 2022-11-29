@@ -14,7 +14,8 @@ class PokeList extends Component {
         this.setState({isLoading: true});
         fetch('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
         .then((res)=>res.json())
-        .then((data) => {const fetches = data.results.map((p) =>{
+        .then((data) => {
+            const fetches = data.results.map((p) =>{
             return fetch(p.url).then((res) => res.json());
         });
         Promise.all(fetches).then((res)=>
@@ -34,7 +35,8 @@ console.log(this.state.data)
         return (
             <div className={classes.card_container}>
                 {this.state.data.map((card) =>(
-                    <Card name={card.name}
+                    <Card 
+                    name={card.name}
                     key={card.name}
                     image={card.sprites.other["official-artwork"].front_default}/>
 
